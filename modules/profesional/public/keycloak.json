@@ -1,0 +1,8 @@
+{
+  "realm": "professional",
+  "auth-server-url": "http://localhost:4000/auth/",
+  "ssl-required": "external",
+  "resource": "professional",
+  "public-client": true,
+  "confidential-port": 0
+}

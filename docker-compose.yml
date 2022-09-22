@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  suomifi_keycloak:
+    image: jboss/keycloak:16.1.1
+    ports:
+      - 8000:8080
+    environment:
+      - DB_VENDOR=h2
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+
+  professional_keycloak:
+    image: jboss/keycloak:16.1.1
+    ports:
+      - 4000:8080
+    environment:
+      - DB_VENDOR=h2
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+
+  customer_keycloak:
+    image: jboss/keycloak:16.1.1
+    ports:
+      - 4001:8080
+    environment:
+      - DB_VENDOR=h2
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+
+  #  professional_frontend:
+    #  build: ./modules/professional
+    #  image: professional_frontend:latest
+    #  ports:
+      #  - 3000:3000
+
+  #  customer_frontend:
+    #  build: ./modules/customer
+    #  image: customer_frontend:latest
+    #  ports:
+      #  - 3001:3000
